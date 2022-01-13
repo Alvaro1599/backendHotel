@@ -5,9 +5,9 @@ const createList = require('../controllers/crudList/createList');
 const createCategory = require('../controllers/crudCategory/createCategory');
 const products = require('../models/products');
 const list = require('../models/list');
-const product_list = require('../models/product_list');
-const category = require('../models/category');
-const res = require('express/lib/response');
+const updateProducts = require('../controllers/crudProduct/updateProduct');
+const updateList = require('../controllers/crudList/updateList');
+const updateCategory = require('../controllers/crudCategory/updateCategory');
 router.get('/', async (req, res) => {
 	try {
 		const newList = await list.findAll({
@@ -19,8 +19,16 @@ router.get('/', async (req, res) => {
 		res.status(400).send(error);
 	}
 });
+/* update section */
+router.put('/updateCategory', updateCategory);
+router.put('/updateList', updateList);
+router.put('/updateProduct', updateProducts);
+
+/* end section */
+
+/* create section */
 router.post('/createCategory', createCategory);
 router.post('/createList', createList);
 router.post('/createProduct', createProducts);
-
+/* end section */
 module.exports = router;
