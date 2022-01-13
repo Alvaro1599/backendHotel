@@ -1,6 +1,6 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../database/index');
-const product = require('./products');
+
 const list = sequelize.define(
 	'list',
 	{
@@ -15,9 +15,8 @@ const list = sequelize.define(
 		}
 	},
 	{
-		timestamps: false,
-		freezeTableName: true
+		timestamps: false
 	}
 );
-list.hasMany(product);
+
 module.exports = list;

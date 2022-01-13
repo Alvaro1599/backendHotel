@@ -15,9 +15,8 @@ const category = sequelize.define(
 		}
 	},
 	{
-		timestamps: false,
-		freezeTableName: true
+		timestamps: false
 	}
 );
-category.hasMany(product);
+
 module.exports = category;
