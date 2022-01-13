@@ -5,7 +5,7 @@ app.listen(app.get('PORT'), async () => {
 		console.log(`El servidor esta corriendo en el puerto: ${app.get('PORT')}`);
 		await sequelize.authenticate();
 		console.log('La conexión a la base de datos se ha realizado correctamente');
-		await sequelize.sync({ force: true });
+		await sequelize.sync({ force: false });
 	} catch (error) {
 		console.log(error);
 	}

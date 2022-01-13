@@ -1,8 +1,8 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../database/index');
 const product = require('./products');
-const category = sequelize.define(
-	'category',
+const list = sequelize.define(
+	'list',
 	{
 		id: {
 			type: DataTypes.UUID,
@@ -19,5 +19,5 @@ const category = sequelize.define(
 		freezeTableName: true
 	}
 );
-category.hasMany(product);
-module.exports = category;
+list.hasMany(product);
+module.exports = list;

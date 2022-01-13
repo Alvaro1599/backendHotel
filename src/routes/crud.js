@@ -1,10 +1,11 @@
 const express = require('express');
 const router = express.Router();
+const createProducts = require('../controllers/crudProduct/createProduct');
+const createList = require('../controllers/crudList/createList');
+const createCategory = require('../controllers/crudCategory/createCategory');
 
-router.get('/data', (req, res) => {
-	res.json({
-		message: 'Hello World'
-	});
-});
+router.post('/createCategory', createCategory);
+router.post('/createList', createList);
+router.post('/createProduct', createProducts);
 
 module.exports = router;
