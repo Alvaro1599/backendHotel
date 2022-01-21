@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../database/index');
-const product = sequelize.define(
-	'product',
+const client = sequelize.define(
+	'client',
 	{
 		id: {
 			type: DataTypes.UUID,
@@ -12,13 +12,15 @@ const product = sequelize.define(
 			type: DataTypes.STRING,
 			allowNull: false
 		},
-		note: {
+		dni: {
 			type: DataTypes.STRING,
 			allowNull: false
 		},
-		img: {
-			type: DataTypes.STRING,
-			allowNull: false
+		correo: {
+			type: DataTypes.STRING
+		},
+		celular: {
+			type: DataTypes.INTEGER
 		}
 	},
 	{
@@ -27,4 +29,4 @@ const product = sequelize.define(
 	}
 );
 
-module.exports = product;
+module.exports = client;
