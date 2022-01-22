@@ -2,8 +2,8 @@ const client = require('../../models/client');
 
 const createClient = async (req, res) => {
 	try {
-		const { name, dni, correo, celular } = req.body;
-		const data = await client.create({ name, dni, correo, celular });
+		const { name, dni, correo, celular, direccion } = req.body;
+		const data = await client.create({ name, dni, correo, celular, direccion });
 		res.status(200).json('usuario creado');
 	} catch (error) {
 		console.log(error);
